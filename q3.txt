@@ -1,0 +1,26 @@
+//Write a program that takes an integer as input and returns true if the input is a power of two.
+#include <stdio.h> 
+#include <stdbool.h> 
+
+bool isPowerOfTwo(int num) { 
+    if (num <= 0) { 
+        return false; 
+    } 
+    return (num & (num - 1)) == 0; 
+} 
+
+int main() { 
+    int input; 
+    printf("Enter an integer: "); 
+    if (scanf("%d", &input) == 1) { // Checks if the input is valid 
+        if (isPowerOfTwo(input)) { 
+            printf("true\n"); 
+        } else { 
+            printf("false\n"); 
+        } 
+    } else { 
+        printf("Invalid input.\n"); // Message for invalid input 
+    } 
+
+    return 0; 
+} 
